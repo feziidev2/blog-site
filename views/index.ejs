@@ -1,0 +1,18 @@
+<%- layout('layouts/main') %>
+<h1>All Blogs</h1>
+<div class="row">
+  <% blogs.forEach(blog => { %>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <% if (blog.image) { %>
+          <img src="/<%= blog.image %>" class="card-img-top" alt="<%= blog.title %>">
+        <% } %>
+        <div class="card-body">
+          <h5 class="card-title"><%= blog.title %></h5>
+          <p class="card-text"><%= blog.description %></p>
+          <a href="/blogs/<%= blog._id %>" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
